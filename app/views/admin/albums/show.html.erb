@@ -1,0 +1,12 @@
+<div class="row">
+  <div class="col">
+    <h1><%= album_title_with_year(@record) %></h1>
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+    <%= link_to "Edit", edit_admin_album_path(@record) %>
+    |
+    <%= link_to "Delete", admin_album_path(@record), method: :delete, data: { confirm: "Destroy this album?" } %>
+  </div>
+</div>

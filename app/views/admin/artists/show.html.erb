@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="col">
+    <h1><%= artist_with_country(@record) %></h1>
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+    <%= link_to "Edit", edit_admin_artist_path(@record) %>
+    |
+    <%= link_to "Delete", admin_artist_path(@record), method: :delete, data: { confirm: "Destroy this artist?" } %>
+  </div>
+</div>
+<div class="row mt-2">
+  <div class="col">
+    <h5>Albums</h5>
+    <ul class="list-group">
+      <% @albums.each do |album| %>
+        <li class="list-group-item"><%= link_to album_title_with_year(album), admin_album_path(album) %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
