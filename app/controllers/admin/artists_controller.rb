@@ -1,22 +1,13 @@
 module Admin
-  class ArtistsController < CommonController
-    before_action :set_model_class
-    before_action :set_records_path
+  class ArtistsController < AdminController
+    include CrudActions
 
-    def set_model_class
-      self.class.superclass.class_eval do
-        def model_class
-          Artist
-        end
-      end
+    def model_class
+      Artist
     end
 
-    def set_records_path
-      self.class.superclass.class_eval do
-        def records_path
-          admin_artists_path
-        end
-      end
+    def records_path
+      admin_artists_path
     end
 
     def show

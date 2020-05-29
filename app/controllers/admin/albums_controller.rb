@@ -1,24 +1,14 @@
 module Admin
-  class AlbumsController < CommonController
-    before_action :set_model_class
-    before_action :set_records_path
+  class AlbumsController < AdminController
+    include CrudActions
 
-    def set_model_class
-      self.class.superclass.class_eval do
-        def model_class
-          Album
-        end
-      end
+    def model_class
+      Album
     end
 
-    def set_records_path
-      self.class.superclass.class_eval do
-        def records_path
-          admin_albums_path
-        end
-      end
+    def records_path
+      admin_albums_path
     end
-
 
     def index
       super
