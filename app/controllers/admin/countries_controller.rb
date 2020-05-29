@@ -1,7 +1,5 @@
 module Admin
   class CountriesController < AdminController
-    include CrudActions
-
     def model_class
       Country
     end

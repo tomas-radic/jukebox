@@ -1,7 +1,5 @@
 module Admin
   class ArtistsController < AdminController
-    include CrudActions
-
     def model_class
       Artist
     end

@@ -1,7 +1,5 @@
 module Admin
   class AlbumsController < AdminController
-    include CrudActions
-
     def model_class
       Album
     end
